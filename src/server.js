@@ -16,9 +16,9 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 // CORS (dev note: if you use Vite proxy, these can be relaxed)
-const corsOrigin = process.env.CORS_ORIGIN || "http://localhost:5173";
+const corsOrigin = process.env.CORS_ORIGIN;
 app.use(cors({
-  origin: "http://localhost:5173", // your frontend
+  origin: corsOrigin, // your frontend
   credentials: true
 }));
 
