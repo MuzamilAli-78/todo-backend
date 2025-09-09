@@ -35,9 +35,13 @@ app.use("/api/todos", todoRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-const URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/crud_auth_db";
+// const PORT = process.env.PORT || 5000;
+// const URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/crud_auth_db";
 
-connectDB(URI).then(() => {
-  app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
-});
+// connectDB(URI).then(() => {
+//   app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+// });
+const URI = process.env.MONGODB_URI;
+connectDB(URI);
+
+export default app;
